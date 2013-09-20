@@ -3,3 +3,7 @@
 
 (setq tab-width 4
       indent-tabs-mode t)
+
+(prelude-require-packages '(solarized-theme))
+
+(load-theme 'solarized-dark t)
