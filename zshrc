@@ -12,6 +12,7 @@ ZSH_THEME="simple"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="emacs"
 alias tailf="tail -F"
+alias bower="noglob bower"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -44,7 +45,7 @@ alias tailf="tail -F"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx rbenv svn virtualenv)
+plugins=(git osx rbenv virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
