@@ -52,3 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/Users/bbarr/bin:$PATH:bin:/opt/boxen/rbenv/shims:/opt/boxen/rbenv/bin:/opt/boxen/rbenv/plugins/ruby-build/bin:node_modules/.bin:/opt/boxen/nodenv/shims:/opt/boxen/nodenv/bin:/opt/boxen/bin:/opt/boxen/homebrew/bin:/opt/boxen/homebrew/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin
+
+# Aliases that require path changes.
+alias ctags="$(brew --prefix)/bin/ctags"
+alias etags="$(brew --prefix)/bin/ctags -e"
