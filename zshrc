@@ -13,6 +13,8 @@ ZSH_THEME="simple"
 alias vim="emacs"
 alias tailf="tail -F"
 alias bower="noglob bower"
+alias rails3="rails _3.2.15_"
+alias r3="rails _3.2.15_"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
