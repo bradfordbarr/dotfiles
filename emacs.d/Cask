@@ -1,0 +1,12 @@
+(source "melpa" "http://melpa.milkbox.net/packages/")
+
+(depends-on "[cl-struct-package-desc projectile (20131029 1130) Manage and navigate projects in Emacs easily [github] ((s (1 6 0)) (dash (1 5 0)) (pkg-info (0 1))) single melpa nil nil nil]")
+(depends-on "ag")
+(depends-on "auto-complete")
+(depends-on "base16-theme")
+(depends-on "enh-ruby-mode")
+(depends-on "helm")
+(depends-on "pallet")
+(depends-on "puppet-mode")
+(depends-on "solarized-theme")
+(depends-on "web-mode")
