@@ -6,4 +6,5 @@ backup/
 recentf
 tramp
 *~
-#*#
+\#*\#
+.\#*
