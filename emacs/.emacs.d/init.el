@@ -12,7 +12,7 @@
 (setq scroll-margin 1
       scroll-step 1
       scroll-conservatively 10000
-      scroll-preserve-screen-position 1)
+      scroll-preserve-screen-position nil)
 ;; Fix the scrolling behavior for the trackpad
 (setq mouse-wheel-follow-mouse t
       mouse-wheel-scroll-amount '(1 ((shift) . 1)) ; shift refers to the modifier
@@ -20,6 +20,12 @@
 ;; Get the custom cruft out of this file
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
+;; Swap the meta and super keys for my mac
+(when (eq system-type 'darwin)
+  (setq mac-option-modifier 'super)
+  (setq mac-command-modifier 'meta))
+;; I don't need my system to announce what file I'm on. I got that in my tabs
+(setq frame-title-format nil)
 
 ;;; Packages
 ;; Setup the package repositories
@@ -33,7 +39,7 @@
  (lambda (package)
    (unless (package-installed-p package)
      (package-install package)))
- '(base16-theme evil evil-tabs git-gutter nyan-mode))
+ '(auto-complete base16-theme evil evil-tabs fuzzy git-gutter nyan-mode))
 
 ;;; Evil Mode
 ;; Start up Evil mode
@@ -49,7 +55,18 @@
 ;; Start up the git gutter
 (global-git-gutter-mode t)
 
-;; Color Scheme
+;;; Auto-Complete Mode
+;; Enable fuzzy mode
+(require 'fuzzy)
+(setq ac-use-fuzzy t)
+;; Disable the stupid tool tips
+(setq ac-use-quick-help nil)
+;; Start up Auto-Complete mode
+(auto-complete t)
+;; Configure the defaults
+(ac-config-default)
+
+;;; Color Scheme
 ;; Set my favorite theme base16-tomorrow
 (load-theme 'base16-tomorrow)
 ;; Setup custom colors
@@ -82,4 +99,13 @@
 			  `(git-gutter:deleted ((t (:foreground ,base08)))))
   ;; Get my current line color to be nicer
   (custom-theme-set-faces 'base16-tomorrow
-			  `(hl-line ((t (:background ,base02))))))
+			  `(hl-line ((t (:background ,base02)))))
+  ;; Get better color themeing for auto-complete
+  (custom-theme-set-faces 'base16-tomorrow
+			  `(ac-candidate-face ((t (:background ,base04 :foreground ,base01))))
+			  `(ac-candidate-mouse-face ((t (:background ,base0C :foreground ,base04 :bold nil)))))
+  ;; Pop-up-tips don't match anything either.
+  (custom-theme-set-faces 'base16-tomorrow
+			  `(popup-tip-face ((t (:background ,base05 :foreground ,base01))))
+			  `(popup-scroll-bar-background-face ((t (:background ,base03))))
+			  `(popup-scroll-bar-foreground-face ((t (:background ,base01))))))
