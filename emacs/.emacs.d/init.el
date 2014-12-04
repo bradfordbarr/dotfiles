@@ -28,6 +28,12 @@
 ;; I don't need my system to announce what file I'm on. I got that in my tabs
 (when (window-system)
   (setq frame-title-format nil))
+;; Make the screen big when working on my mac!
+(when (and (window-system) (eq system-type 'darwin))
+  (add-to-list 'default-frame-alist '(left . 0))
+  (add-to-list 'default-frame-alist '(top . 0))
+  (add-to-list 'default-frame-alist '(height . 50))
+  (add-to-list 'default-frame-alist '(width . 200)))
 
 ;;; Packages
 ;; Setup the package repositories
