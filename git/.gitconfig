@@ -3,3 +3,5 @@
 	email = bradford.barr@gmail.com
 [color]
 	ui = always
+[push]
+	default = simple
