@@ -47,7 +47,7 @@
  (lambda (package)
    (unless (package-installed-p package)
      (package-install package)))
- '(auto-complete base16-theme evil evil-tabs fuzzy git-gutter nyan-mode))
+ '(auto-complete base16-theme evil evil-tabs fuzzy git-gutter markdown-mode nyan-mode))
 
 ;;; Evil Mode
 ;; Start up Evil mode
@@ -73,6 +73,18 @@
 (auto-complete t)
 ;; Configure the defaults
 (ac-config-default)
+
+;;; Flyspell
+;; Set up the dictionary properly
+(setq ispell-program-name "/usr/local/bin/aspell")
+
+;;; Markdown mode
+;; Make sure that .md files are setup with gfm-mode instead of markdown-mode
+(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
+;; Start up flyspell-mode for markdown files
+(add-hook 'gfm-mode-hook
+	  (lambda ()
+	    (flyspell-mode t)))
 
 ;;; Color Scheme
 ;; Set my favorite theme base16-tomorrow
