@@ -35,6 +35,13 @@
   (add-to-list 'default-frame-alist '(height . 50))
   (add-to-list 'default-frame-alist '(width . 200)))
 
+;;; Autosave and Backup
+;; Place Autosave and Backup files in a single folder under the temp directory
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 ;;; Packages
 ;; Setup the package repositories
 (require 'package)
@@ -47,7 +54,7 @@
  (lambda (package)
    (unless (package-installed-p package)
      (package-install package)))
- '(auto-complete base16-theme evil evil-tabs fuzzy git-gutter markdown-mode nyan-mode))
+ '(auto-complete base16-theme evil evil-leader evil-tabs fuzzy git-gutter markdown-mode nyan-mode projectile))
 
 ;;; Evil Mode
 ;; Start up Evil mode
@@ -85,6 +92,10 @@
 (add-hook 'gfm-mode-hook
 	  (lambda ()
 	    (flyspell-mode t)))
+
+;;; Projectile
+;; Start global projectile mode
+(projectile-global-mode)
 
 ;;; Color Scheme
 ;; Set my favorite theme base16-tomorrow
