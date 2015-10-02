@@ -8,8 +8,13 @@
                      "theme.el"
                      "keys.el"
                      "evil.el"
-                     "ac.el"))
+                     "ac.el"
+		     "elscreen.el"
+		     "smex.el"
+		     "ag.el"))
+
 (when (window-system)
+  (message "Loading window stuff")
   (mapc 'load-config '("window.el"
                        "scroll.el"))
   (nyan-mode t))

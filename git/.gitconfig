@@ -5,3 +5,5 @@
 	ui = always
 [push]
 	default = simple
+[core]
+	autocrlf = input

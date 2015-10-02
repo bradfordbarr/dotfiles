@@ -1,5 +1,5 @@
 ;; Set my favorite theme base16-tomorrow
-(load-theme 'base16-tomorrow)
+(load-theme 'base16-tomorrow-dark)
 
 ;; Setup custom colors
 (let ((base00 "#1d1f21")  ; black
@@ -20,29 +20,29 @@
       (base0F "#a3685a")) ; brown
 
   ;; Default elscreen tabs are hideous
-  (custom-theme-set-faces 'base16-tomorrow
+  (custom-theme-set-faces 'base16-tomorrow-dark
 			  `(elscreen-tab-background-face ((t (:background ,base01))))
 			  `(elscreen-tab-control-face ((t (:background ,base01 :foreground ,base04))))
 			  `(elscreen-tab-current-screen-face ((t (:background ,base06 :foreground ,base01))))
 			  `(elscreen-tab-other-screen-face ((t (:background ,base01 :foreground ,base04 :underline nil)))))
 
   ;; Git gutter colors don't match base16 tomorrow
-  (custom-theme-set-faces 'base16-tomorrow
+  (custom-theme-set-faces 'base16-tomorrow-dark
 			  `(git-gutter:modified ((t (:background ,base01 :foreground ,base0E))))
 			  `(git-gutter:added ((t (:foreground ,base0B))))
 			  `(git-gutter:deleted ((t (:foreground ,base08)))))
 
   ;; Get my current line color to be nicer
-  (custom-theme-set-faces 'base16-tomorrow
+  (custom-theme-set-faces 'base16-tomorrow-dark
 			  `(hl-line ((t (:background ,base02)))))
 
   ;; Get better color themeing for auto-complete
-  (custom-theme-set-faces 'base16-tomorrow
+  (custom-theme-set-faces 'base16-tomorrow-dark
 			  `(ac-candidate-face ((t (:background ,base04 :foreground ,base01))))
 			  `(ac-candidate-mouse-face ((t (:background ,base0C :foreground ,base04 :bold nil)))))
 
   ;; Pop-up-tips don't match anything either.
-  (custom-theme-set-faces 'base16-tomorrow
+  (custom-theme-set-faces 'base16-tomorrow-dark
 			  `(popup-tip-face ((t (:background ,base05 :foreground ,base01))))
 			  `(popup-scroll-bar-background-face ((t (:background ,base03))))
 			  `(popup-scroll-bar-foreground-face ((t (:background ,base01))))))
