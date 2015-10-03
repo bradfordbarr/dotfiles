@@ -2,7 +2,6 @@ auto-save-list/
 vendor/
 .cask/
 cache/
-backup/
 recentf
 tramp
 *~
