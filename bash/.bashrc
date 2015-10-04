@@ -31,3 +31,6 @@ if [ -d $( brew --prefix )/etc/bash_completion.d ]; then
       source $f
     done
 fi
+
+# Gruvbox pallet
+source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"

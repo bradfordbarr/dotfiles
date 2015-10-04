@@ -7,3 +7,5 @@ tramp
 *~
 \#*\#
 .\#*
+*.swp
+.netrwhist
