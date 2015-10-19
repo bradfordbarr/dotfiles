@@ -1,5 +1,7 @@
 " Better safe than sorry.
 set nocompatible
+set t_Co=256
+set shell=/bin/bash
 
 " Keep turdfiles in one place.
 set backup
@@ -35,6 +37,9 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set shiftround
+
+" Except for make
+autocmd FileType make setlocal noexpandtab
 
 " Show me the 80 column mark.
 set colorcolumn=80
