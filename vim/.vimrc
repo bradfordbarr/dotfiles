@@ -85,3 +85,11 @@ let g:airline_right_sep = ''
 let g:airline_section_b = '%{airline#extensions#branch#get_head()}'
 let g:airline_section_z = '%3p%% %#__accent_bold#%4l%#__restore__#:%4v'
 let g:airline#extensions#whitespace#enabled = 0
+
+" Neocomplete config.
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+
+" Marching config.
+let g:marching_enable_neocomplete = 1
+let g:marching_clang_command = 'clang'

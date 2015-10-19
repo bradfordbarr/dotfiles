@@ -13,3 +13,12 @@
 [submodule "vim/.vim/bundle/ctrlp.vim"]
 	path = vim/.vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/.vim/bundle/neocomplete.vim"]
+	path = vim/.vim/bundle/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "vim/.vim/bundle/vim-marching"]
+	path = vim/.vim/bundle/vim-marching
+	url = https://github.com/osyo-manga/vim-marching.git
+[submodule "vim/.vim/bundle/vimproc.vim"]
+	path = vim/.vim/bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim.git
