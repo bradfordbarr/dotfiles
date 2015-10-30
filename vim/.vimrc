@@ -1,5 +1,7 @@
 " Better safe than sorry.
 set nocompatible
+set t_Co=256
+set shell=/bin/bash
 
 " Keep turdfiles in one place.
 set backup
@@ -35,6 +37,9 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set shiftround
+
+" Except for make
+autocmd FileType make setlocal noexpandtab
 
 " Show me the 80 column mark.
 set colorcolumn=80
@@ -80,3 +85,11 @@ let g:airline_right_sep = ''
 let g:airline_section_b = '%{airline#extensions#branch#get_head()}'
 let g:airline_section_z = '%3p%% %#__accent_bold#%4l%#__restore__#:%4v'
 let g:airline#extensions#whitespace#enabled = 0
+
+" Neocomplete config.
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+
+" Marching config.
+let g:marching_enable_neocomplete = 1
+let g:marching_clang_command = 'clang'
