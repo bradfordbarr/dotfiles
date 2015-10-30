@@ -42,12 +42,12 @@ source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 # History number?
 
 # Colors
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-yellow=$(tput setaf 3)
-blue=$(tput setaf 4)
-purple=$(tput setaf 5)
-aqua=$(tput setaf 6)
+red=$(tput setaf 9)
+green=$(tput setaf 10)
+yellow=$(tput setaf 11)
+blue=$(tput setaf 12)
+purple=$(tput setaf 13)
+aqua=$(tput setaf 14)
 reset=$(tput sgr0)
 
 __git_branch() {
