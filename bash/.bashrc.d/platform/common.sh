@@ -34,3 +34,8 @@ fi
 for job in $(find "${BASHRC_DIR}/enlistments" -type f -iname "*.sh"); do
   source ${job}
 done
+
+# Start an ssh-agent if it's not already running
+if [ -z $SSH_AGENT_PID -a -z $SSH_TTY ]; then
+  eval $(ssh-agent -s) > /dev/null
+fi
