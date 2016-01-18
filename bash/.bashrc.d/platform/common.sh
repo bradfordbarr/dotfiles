@@ -36,6 +36,10 @@ for job in $(find "${BASHRC_DIR}/enlistments" -type f -iname "*.sh"); do
 done
 
 # Start an ssh-agent if it's not already running
-if [ -z $SSH_AGENT_PID -a -z $SSH_TTY ]; then
+[ -z "$SSH_AGENT_PID" ] && SSH_AGENT_PID=$(pgrep -u ${USER} ssh-agent)
+[ -z "$SSH_AUTH_SOCK" ] && SSH_AUTH_SOCK=$(find /tmp -name "agent.${SSH_AUTH_PID}")
+[ -n "$SSH_AUTH_SOCK" ] && export SSH_AUTH_SOCK
+[ -n "$SSH_AGENT_PID" ] && export SSH_AGENT_PID
+if [ -z "${SSH_AGENT_PID}" -a -z "${SSH_TTY}" ]; then
   eval $(ssh-agent -s) > /dev/null
 fi
