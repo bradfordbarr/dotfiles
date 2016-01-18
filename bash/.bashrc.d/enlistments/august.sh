@@ -1,13 +1,12 @@
-# August paths
-# Source directory for august
+# Make sure august scripts are in the path
+export PATH="${PATH}:${AUGUST_SRC}/scripts/bin"
+
+# Set up august source path
 export AUGUST_SRC="${HOME}/src/august"
 
-# Executable paths for august
-## Random homeless scripts
-export PATH="${AUGUST_SRC}/scripts/bin:${PATH}"
-## Firmware build tools
-export PATH="${AUGUST_SRC}/firmware-tools/mac/arm-gcc/bin:${PATH}"
-
-# Android stuff
-export ANDROID_HOME="/usr/local/opt/android-sdk"
+# Add firmware tools to path, and add android home for android builds
+if [ "${PLATFORM}" = "Darwin" ]; then
+  export PATH="${PATH}:${AUGUST_SRC}/firmware-tools/mac/arm-gcc/bin"
+  export ANDROID_HOME="/usr/local/opt/android-sdk"
+fi
 
