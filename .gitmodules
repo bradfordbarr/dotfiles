@@ -10,15 +10,9 @@
 [submodule "vim/.vim/bundle/vim-fugitive"]
 	path = vim/.vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/.vim/bundle/ctrlp.vim"]
-	path = vim/.vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/.vim/bundle/neocomplete.vim"]
-	path = vim/.vim/bundle/neocomplete.vim
-	url = https://github.com/Shougo/neocomplete.vim.git
-[submodule "vim/.vim/bundle/vim-marching"]
-	path = vim/.vim/bundle/vim-marching
-	url = https://github.com/osyo-manga/vim-marching.git
-[submodule "vim/.vim/bundle/vimproc.vim"]
-	path = vim/.vim/bundle/vimproc.vim
-	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "vim/.vim/bundle/rust.vim"]
+	path = vim/.vim/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
+[submodule "vim/.vim/bundle/vim-fireplace"]
+	path = vim/.vim/bundle/vim-fireplace
+	url = git@github.com:tpope/vim-fireplace.git

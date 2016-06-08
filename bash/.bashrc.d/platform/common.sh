@@ -10,7 +10,12 @@ shopt -s histappend    # Append to the history file
 shopt -s checkwinsize  # Check the window size after each command is issued
 
 # Better less for non-text
-[ -x "${LESSPIPE}" ] && eval "$(SHELL=/bin/sh lesspipe)"
+[ -x "${LESSPIPE}" ] && eval "$(SHELL=/bin/sh ${LESSPIPE})"
+
+# Rbenv
+if [ -n "$(which rbenv)" ]; then
+  eval "$(rbenv init -)"
+fi
 
 # Nvm
 export NVM_DIR="${HOME}/.nvm"
