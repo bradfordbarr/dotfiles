@@ -35,11 +35,6 @@ if [ -f "${AUTOENV}" ]; then
     source "${AUTOENV}"
 fi
 
-# Job stuff
-for job in $(find "${BASHRC_DIR}/enlistments" -type f -iname "*.sh"); do
-  source ${job}
-done
-
 # Start an ssh-agent if it's not already running
 [ -z "$SSH_AGENT_PID" ] && SSH_AGENT_PID=$(pgrep -u ${USER} ssh-agent)
 [ -z "$SSH_AUTH_SOCK" ] && SSH_AUTH_SOCK=$(find /tmp -name "agent.${SSH_AUTH_PID}")

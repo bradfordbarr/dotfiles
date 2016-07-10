@@ -9,6 +9,9 @@ export PATH="${HOME}/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
 export PLATFORM=$(uname)
 export BASHRC_DIR="${HOME}/.bashrc.d"
 
+# Load common configuration
+source "${BASHRC_DIR}/platform/common.sh"
+
 # Load platform dependent files
 case "${PLATFORM}" in
   Darwin)
@@ -18,9 +21,6 @@ case "${PLATFORM}" in
     source "${BASHRC_DIR}/platform/linux.sh"
     ;;
 esac
-
-# Load common configuration
-source "${BASHRC_DIR}/platform/common.sh"
 
 # Load color codes and pallet
 source "${BASHRC_DIR}/colors.sh"
