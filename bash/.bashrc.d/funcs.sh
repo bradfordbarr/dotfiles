@@ -29,13 +29,14 @@ falseish() {
 
 # Asks to save the alias
 alias() {
-  local save=
+  local save="n"
+  local cmd="$(echo $@ | sed 's/=\(.*\)$/="\1"/')"
   builtin alias "$@"
 
-  if ! grep -q "${cmd}" ${PLATFORM_ALIAS}; then
-    read -p "Save this alias? (y|N)" save
+  if grep -q -v "${cmd}" ${PLATFORM_ALIAS}; then
+    read -p "Save this alias? (y|N) " save
     if trueish $save; then
-      echo "alias $@" >> ${PLATFORM_ALIAS}
+      echo "alias $cmd" >> ${PLATFORM_ALIAS}
     fi
   fi
 }

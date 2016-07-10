@@ -18,6 +18,7 @@ shopt -s no_empty_cmd_completion # Don't try to autocomplete an empty line
 # Variables
 export PATH="${HOME}/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
 export BASHRC_DIR="${HOME}/.bashrc.d"
+
 export PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
 export PLATFORM_ALIAS="${BASHRC_DIR}/${PLATFORM}/alias.sh"
 export PLATFORM_CONFIG="${BASHRC_DIR}/${PLATFORM}/config.sh"
