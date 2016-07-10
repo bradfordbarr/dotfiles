@@ -1,5 +1,7 @@
+#!/bin/bash
 # Gruvbox pallet
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+GRUVBOX_PALETTE="$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+[ -f "${GRUVBOX_PALETTE}" ] && source "${GRUVBOX_PALETTE}"
 
 # Colors
 background=$(tput setaf 0)

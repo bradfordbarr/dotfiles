@@ -1,3 +1,4 @@
+#!/bin/bash
 # PS1
 # Things I want in my PS1 (in no particular order) 
 # Exit status of previous command
