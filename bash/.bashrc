@@ -6,21 +6,14 @@ esac
 
 # Variables
 export PATH="${HOME}/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
-export PLATFORM=$(uname)
+export PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
 export BASHRC_DIR="${HOME}/.bashrc.d"
 
 # Load common configuration
 source "${BASHRC_DIR}/platform/common.sh"
 
 # Load platform dependent files
-case "${PLATFORM}" in
-  Darwin)
-    source "${BASHRC_DIR}/platform/darwin.sh"
-    ;;
-  Linux)
-    source "${BASHRC_DIR}/platform/linux.sh"
-    ;;
-esac
+source "${BASHRC_DIR}/platform/${PLATFORM}.sh"
 
 # Load color codes and pallet
 source "${BASHRC_DIR}/colors.sh"
